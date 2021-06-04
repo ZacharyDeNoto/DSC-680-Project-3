@@ -1,0 +1,110 @@
+---
+title: "DSC 680 Project 3"
+output: pdf_document
+---
+
+
+
+```{r}
+
+library(readxl)
+data <- read.csv('accidents.csv')
+data
+
+
+```
+
+
+```{r}
+
+#data <- subset( data, select = -c( ID))
+#data <- subset( data, select = -c( Start_Lat ))
+#data <- subset( data, select = -c( Start_Lng ))
+#data <- subset( data, select = -c( End_Lat ))
+#data <- subset( data, select = -c( End_Lng))
+#data <- subset( data, select = -c( Number ))
+#data <- subset( data, select = -c( Street))
+#data <- subset( data, select = -c( Country ))
+#data <- subset( data, select = -c( Timezone ))
+data <- subset( data, select = -c( Airport_Code ))
+data <- subset( data, select = -c( Weather_Timestamp))
+data <- subset( data, select = -c( Sunrise_Sunset ))
+data <- subset( data, select = -c( Civil_Twilight))
+data <- subset( data, select = -c(Nautical_Twilight ))
+data <- subset( data, select = -c( Astronomical_Twilight ))
+
+data
+#sum(is.na(data))
+
+
+```
+
+
+```{r}
+
+library(plotly)
+fig <- plot_ly(x = data$Temperature.F.,
+             type = "histogram")
+fig
+
+```
+
+
+```{r}
+
+fig <- plot_ly(x = data$Humidity...,
+             type = "histogram")
+fig
+
+```
+
+
+```{r}
+
+fig <- plot_ly(x = data$Visibility.mi.,
+             type = "histogram")
+fig
+
+```
+
+
+
+
+```{r}
+
+fig <- plot_ly(x = data$Wind_Speed.mph.,
+             type = "histogram")
+fig
+
+```
+
+
+
+
+
+
+
+```{r}
+
+cor(data$Severity,data$Distance.mi., method = 'spearman')
+temp <- data[which(!is.na(data$Temperature.F.)),]
+cor(temp$Severity,temp$Temperature.F., method = 'spearman')
+wind <- data[which(!is.na(data$Wind_Chill.F.)),]
+cor(wind$Severity,wind$Wind_Chill.F., method = 'spearman')
+hum <- data[which(!is.na(data$Humidity...)),]
+cor(hum$Severity,hum$Humidity..., method = 'spearman')
+press <- data[which(!is.na(data$Pressure.in.)),]
+cor(press$Severity,press$Pressure.in., method = 'spearman')
+vis <- data[which(!is.na(data$Visibility.mi.)),]
+cor(vis$Severity,vis$Visibility.mi., method = 'spearman')
+winds <- data[which(!is.na(data$Wind_Speed.mph.)),]
+cor(winds$Severity,winds$Wind_Speed.mph., method = 'spearman')
+prec <- data[which(!is.na(data$Precipitation.in.)),]
+cor(prec$Severity,prec$Precipitation.in., method = 'spearman')
+
+
+
+```
+
+
+
