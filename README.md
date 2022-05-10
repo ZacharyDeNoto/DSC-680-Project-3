@@ -16,4 +16,4 @@
 
 ![image](https://user-images.githubusercontent.com/48418677/120875407-b5fe7900-c579-11eb-9a86-0f84115868ac.png)
 
-**Conclusion** - Based on the results of this analysis it appears that you can indeed predict the severity of traffic based on factors of a car accident. It also appears that it is easier to predict traffic from accidents during Covid-19 as opposed to before Covid-19. The average time impact of traffic was greater during Covid-19 even though the average severity was lower. Accidents during Covid-19 must have been worse as there were less cars on the road during this time period.
+**Conclusion** - Based on the results of this analysis it appears that you can indeed predict the severity of traffic based on factors of a car accident. It also appears that it is easier to predict traffic from accidents during Covid-19 as opposed to before Covid-19. The average time impact of traffic was greater during Covid-19 even though the average severity was lower. Accidents during Covid-19 appear to have been worse as there were less cars on the road during this time period.
